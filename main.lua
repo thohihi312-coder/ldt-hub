@@ -440,7 +440,7 @@ function Funcs:Attack()
 end
 
 local Fluent = loadstring(game:HttpGet("https://raw.githubusercontent.com/giaotrinhhoc/Giao-Trinh-Hoc-Ngoai-Ngu-Cua-Hoc-Sinh/refs/heads/main/FluentTrau"))();
-local Window = Fluent:CreateWindow({Title="Ldt Hub",SubTitle="",TabWidth=160,Theme="Dark",Acrylic=false,Size=UDim2.fromOffset(500, 320),MinimizeKey=Enum.KeyCode.End});
+local Window = Fluent:CreateWindow({Title="Name Hub",SubTitle="",TabWidth=160,Theme="Dark",Acrylic=false,Size=UDim2.fromOffset(500, 320),MinimizeKey=Enum.KeyCode.End});
 local Tabs = {Home=Window:AddTab({Title="Thông Tin"}),
     Main=Window:AddTab({Title="Chung"}),
     Sea=Window:AddTab({Title="Sự Kiện"}),
@@ -2558,7 +2558,7 @@ ImageButton.BorderSizePixel = 0;
 ImageButton.Position = UDim2.new(0.120833337 - 0.1, 0, 0.0952890813 + 0.01, 0);
 ImageButton.Size = UDim2.new(0, 50, 0, 50);
 ImageButton.Draggable = true;
-ImageButton.Image = "http://www.roblox.com/asset/?id=Idanh";
+ImageButton.Image = "http://www.roblox.com/asset/?id=Id Ảnh";
 UICorner.Parent = ImageButton;
 UICorner.CornerRadius = UDim.new(0, 12);
 ParticleEmitter.Parent = ImageButton;
@@ -3595,7 +3595,7 @@ if Sea3 then
 			VirtualInputManager:SendKeyEvent(false, "W", false, game);
 			_G.AutoFindPrehistoric = false;
 			if not notified then
-				Fluent:Notify({Title="Ldt Hub",Content="Đảo Dung Nham Tìm Thấy",Duration=10});
+				Fluent:Notify({Title="Name Hub",Content="Đảo Dung Nham Tìm Thấy",Duration=10});
 				notified = true;
 			end
 			return;
@@ -3673,7 +3673,7 @@ if Sea3 then
 			VirtualInputManager:SendKeyEvent(false, "W", false, game);
 			_G.AutoFindMirage = false;
 			if not notified then
-				Fluent:Notify({Title="Ldt Hub",Content="Đảo Bí Ẩn Tìm Thấy",Duration=10});
+				Fluent:Notify({Title="Name Hub",Content="Đảo Bí Ẩn Tìm Thấy",Duration=10});
 				notified = true;
 			end
 			return;
@@ -3751,7 +3751,7 @@ if Sea3 then
 			VirtualInputManager:SendKeyEvent(false, "W", false, game);
 			_G.AutoFindFrozen = false;
 			if not notified then
-				Fluent:Notify({Title="Ldt Hub",Content="Đảo Leviathan Tìm Thấy",Duration=10});
+				Fluent:Notify({Title="Name Hub",Content="Đảo Leviathan Tìm Thấy",Duration=10});
 				notified = true;
 			end
 			return;
@@ -8171,4 +8171,4 @@ spawn(function()
 		end
 	end
 end);
-Fluent:Notify({Title="Ldt Hub",Content="Tải Xong",Duration=10});
+Fluent:Notify({Title="Name Hub",Content="Tải Xong",Duration=10});
