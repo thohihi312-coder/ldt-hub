@@ -440,7 +440,7 @@ function Funcs:Attack()
 end
 
 local Fluent = loadstring(game:HttpGet("https://raw.githubusercontent.com/giaotrinhhoc/Giao-Trinh-Hoc-Ngoai-Ngu-Cua-Hoc-Sinh/refs/heads/main/FluentTrau"))();
-local Window = Fluent:CreateWindow({Title="Ldt Hub",SubTitle=Le Duc Tho"",TabWidth=160,Theme="Dark",Acrylic=false,Size=UDim2.fromOffset(500, 320),MinimizeKey=Enum.KeyCode.End});
+local Window = Fluent:CreateWindow({Title="Ldt Hub",SubTitle="",TabWidth=160,Theme="Dark",Acrylic=false,Size=UDim2.fromOffset(500, 320),MinimizeKey=Enum.KeyCode.End});
 local Tabs = {Home=Window:AddTab({Title="Thông Tin"}),
     Main=Window:AddTab({Title="Chung"}),
     Sea=Window:AddTab({Title="Sự Kiện"}),
