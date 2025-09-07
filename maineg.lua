@@ -2021,38 +2021,54 @@ local Tabs = {
         Icon = ""
     })
 }
-local ScreenGui = Instance.new("ScreenGui");
-local ImageButton = Instance.new("ImageButton");
-local UICorner = Instance.new("UICorner");
-local ParticleEmitter = Instance.new("ParticleEmitter");
-local TweenService = game:GetService("TweenService");
-ScreenGui.Parent = game.CoreGui;
-ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling;
-ImageButton.Parent = ScreenGui;
-ImageButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0);
-ImageButton.BorderSizePixel = 0;
-ImageButton.Position = UDim2.new(0.120833337 - 0.1, 0, 0.0952890813 + 0.01, 0);
-ImageButton.Size = UDim2.new(0, 50, 0, 50);
-ImageButton.Draggable = true;
-ImageButton.Image = "http://www.roblox.com/asset/?id=127370662702721";
-UICorner.Parent = ImageButton;
-UICorner.CornerRadius = UDim.new(0, 12);
-ParticleEmitter.Parent = ImageButton;
-ParticleEmitter.LightEmission = 1;
-ParticleEmitter.Size = NumberSequence.new({NumberSequenceKeypoint.new(0, 0.1),NumberSequenceKeypoint.new(1, 0)});
-ParticleEmitter.Lifetime = NumberRange.new(0.5, 1);
-ParticleEmitter.Rate = 0;
-ParticleEmitter.Speed = NumberRange.new(5, 10);
-ParticleEmitter.Color = ColorSequence.new(Color3.fromRGB(255, 85, 255), Color3.fromRGB(85, 255, 255));
-local rotateTween = TweenService:Create(ImageButton, TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Rotation=360});
-ImageButton.MouseButton1Down:Connect(function()
-	game:GetService("VirtualInputManager"):SendKeyEvent(true, Enum.KeyCode.End, false, game);
-end);
-if game:GetService("ReplicatedStorage").Effect.Container:FindFirstChild("Death") then
-	game:GetService("ReplicatedStorage").Effect.Container.Death:Destroy();
+if game.CoreGui:FindFirstChild('UIBUTTON') then
+  game.CoreGui:FindFirstChild('UIBUTTON'):Destroy()
 end
-if game:GetService("ReplicatedStorage").Effect.Container:FindFirstChild("Respawn") then
-	game:GetService("ReplicatedStorage").Effect.Container.Respawn:Destroy();
+local TweenService = game:GetService("TweenService")
+local UserInputService = game:GetService("UserInputService")
+local UIBUTTON = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local ImageButton = Instance.new("ImageButton")
+local UICorner = Instance.new("UICorner")
+local UICorner_2 = Instance.new("UICorner")
+
+UIBUTTON.Name = "UIBUTTON"
+UIBUTTON.Parent = game.CoreGui
+UIBUTTON.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+Frame.Parent = UIBUTTON
+Frame.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderSizePixel = 0
+Frame.Transparency = 1
+Frame.Position = UDim2.new(0.157012194, 0, 0.164366379, 0)
+Frame.Size = UDim2.new(0, 115, 0, 49)
+
+ImageButton.Parent = Frame
+ImageButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ImageButton.BorderSizePixel = 0
+ImageButton.Position = UDim2.new(0.218742043, 0, -0.155235752, 0)
+ImageButton.Size = UDim2.new(0, 64, 0, 64)
+ImageButton.Image = "rbxassetid://127370662702721"
+ImageButton.Draggable = true
+ImageButton.MouseButton1Click:Connect(function()
+	game:GetService("VirtualInputManager"):SendKeyEvent(true, Enum.KeyCode.End, false, game)
+end)
+UICorner.CornerRadius = UDim.new(0, 100)
+UICorner.Parent = ImageButton
+UICorner_2.CornerRadius = UDim.new(0, 10)
+UICorner_2.Parent = Framec
+CheckPC = function()if not game:GetService("UserInputService").TouchEnabled then return true end end 
+IsPc = CheckPC()
+executor = tostring(identifyexecutor())
+if IsPc then
+  if not string.find(executor, "Wave") or not string.find(executor, "AWP") then
+    Fluent:Notify({Title = " Script",Content = "",SubContent = "",Duration = 15})
+  else
+    Fluent:Notify({Title = "Script",Content = "",SubContent = "Chúc bạn chơi game vv!",Duration = 15})
+  end
+else
+  Fluent:Notify({Title = " Script",Content = "",SubContent = "Chúc bạn chơi game vv!",Duration = 15})
 end
 local FarmLevel = Tabs.Main:AddToggle("FarmLevel", {
     Title = "Auto Farm Level",
